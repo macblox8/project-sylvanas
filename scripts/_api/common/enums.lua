@@ -117,6 +117,7 @@
 ---@field public PREDICTION number
 
 ---@class buff_type
+---@field public EXCEPTION number
 ---@field public UNDEFINIED number
 ---@field public UNKNOWN number
 ---@field public MAGIC number

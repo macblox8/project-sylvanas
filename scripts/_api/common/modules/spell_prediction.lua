@@ -23,10 +23,10 @@
 ---@field public source_position vec3
 ---@field public projectile_speed number
 ---@field public exception_is_heal boolean
----@field public geometry_type geometry_type
+---@field public geometry_type geometry_type | number
 ---@field public intersection_factor number
 ---@field public time_to_hit_override number
----@field public prediction_mode prediction_type
+---@field public prediction_mode prediction_type | number
 ---@field public exception_target_included boolean
 ---@field public exception_player_included boolean
 ---@field public hitbox_min number

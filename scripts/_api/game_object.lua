@@ -20,6 +20,10 @@
 ---@field public duration integer
 ---@field public type integer
 
+---@class item_slot_info
+---@field public object game_object
+---@field public slot_id integer
+
 ---@class game_object
 ---Returns whether the game_object is valid.
 ---@field public is_valid fun(self: game_object): boolean
@@ -27,8 +31,10 @@
 ---@field public get_type fun(self: game_object): number
 ---Returns the class of the game object.
 ---@field public get_class fun(self: game_object): number
----Returns the id of the game object.
+---Returns the npc_id of the game object.
 ---@field public get_npc_id fun(self: game_object): number
+---Returns the item_id of the game object.
+---@field public get_item_id fun(self: game_object): number
 ---Returns the level of the game object.
 ---@field public get_level fun(self: game_object): number
 ---Returns the faction id of the game object.
@@ -74,6 +80,8 @@
 ---@field public has_item fun(self: game_object, item_id: integer): boolean
 ---Returns whether the game object is dead.
 ---@field public is_dead fun(self: game_object): boolean
+---Returns whether the game object is ghost.
+---@field public is_ghost fun(self: game_object): boolean
 ---Returns whether the game object is a basic object.
 ---@field public is_basic_object fun(self: game_object): boolean
 ---Returns whether the game object is a player.
@@ -176,5 +184,9 @@
 ---@field public get_buffs fun(self: game_object): table<buff>
 ---Returns a table containing the debuffs applied to the game object.
 ---@field public get_debuffs fun(self: game_object): table<buff>
+---Returns a list of equipped items (item_slot_info) of the game object, the format comes in we call item_slot_info, a table that contains game_object ptr of the item and item_slot.
+---@field public get_equipped_items fun(self: game_object): table<item_slot_info>
+---Returns a table with the item game_object ptr and the slot_id where the item is on the game object equipped items.
+---@field public get_item_at_inventory_slot fun(self: game_object, slot:number): item_slot_info
 ---Returns a table containing the loss of control info for the game object.
 ---@field public get_loss_of_control_info fun(self: game_object): loss_of_control_info

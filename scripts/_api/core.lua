@@ -207,6 +207,12 @@ function core.object_manager.get_visible_objects()
     return {}
 end
 
+--- Retrieves a list of game objects with all the arena frames.
+---@return game_object
+function core.object_manager.get_arena_frames()
+    return {}
+end
+
 ---@class spell_book
 core.spell_book = {}
 
@@ -346,6 +352,13 @@ end
 ---@param spell_id integer The ID of the spell.
 ---@return number The maximum range of the specified spell.
 function core.spell_book.get_spell_max_range(spell_id)
+    return 0
+end
+
+--- Retrieves the cast time of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return number The cast time in seconds.
+function core.spell_book.get_spell_cast_time(spell_id)
     return 0
 end
 
