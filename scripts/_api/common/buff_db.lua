@@ -163,6 +163,7 @@
 ---@field public RENEW number[]
 ---@field public PURGE_THE_WICKED number[]
 ---@field public RHAPSODY number[]
+---@field public PAIN_SUPPRESSION number[]
 ---@field public OPPORTUNITY number[]
 ---@field public GRAND_MELEE number[]
 ---@field public BURIED_TREASURE number[]

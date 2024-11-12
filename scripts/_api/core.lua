@@ -119,6 +119,19 @@ function core.get_user_flags()
     return 0
 end
 
+---@class inventory
+core.inventory = {}
+
+--- -2 for the keyring
+--- -4 for the tokens bag
+--- 0 = backpack, 1 to 4 for the bags on the character
+--- While bank is opened -1 for the bank content, 5 to 11 for bank bags (numbered left to right, was 5-10 prior to tbc expansion, 2.0 game version)
+---@param bag_id integer BagId https://wowwiki-archive.fandom.com/wiki/BagId
+---@return table<item_slot_info>
+function core.inventory.get_items_in_bag(bag_id)
+    return {}
+end
+
 ---@class input
 core.input = {}
 
@@ -198,6 +211,13 @@ end
 --- Retrieves all game objects.
 ---@return game_object[]
 function core.object_manager.get_all_objects()
+    return {}
+end
+
+-- Retrieves the player for the given arena frame index, nil means we are not in arena
+--- @param index integer
+--- @return game_object | nil
+function core.object_manager.get_arena_target(index)
     return {}
 end
 
@@ -352,6 +372,13 @@ end
 ---@param spell_id integer The ID of the spell.
 ---@return number The maximum range of the specified spell.
 function core.spell_book.get_spell_max_range(spell_id)
+    return 0
+end
+
+--- Retrieves the school flag of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return number The spell school flag.
+function core.spell_book.get_spell_school(spell_id)
     return 0
 end
 

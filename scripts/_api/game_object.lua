@@ -150,6 +150,10 @@
 ---@field public get_direction fun(self: game_object): vec3
 ---Returns whether the game object is a pet.
 ---@field public is_pet fun(self: game_object): boolean
+---Returns whether the game object is a bag type item.
+---@field public is_item_bag fun(self: game_object): boolean
+---Returns the stack count of the item in our bag.
+---@field public get_item_stack_count fun(self: game_object): number
 ---Returns the owner of the game object.
 ---@field public get_owner fun(self: game_object): game_object
 ---Returns the pet of the game object.

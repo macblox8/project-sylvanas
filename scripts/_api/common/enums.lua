@@ -108,6 +108,38 @@
 ---@field public LineOfSight number
 ---@field public combine fun(...: string): number
 
+---@class spell_schools_flags
+---@field public Physical number
+---@field public Holy number
+---@field public Fire number
+---@field public Nature number
+---@field public Frost number
+---@field public Shadow number
+---@field public Arcane number
+---@field public Spellstrike number
+---@field public Flamestrike number
+---@field public Froststrike number
+---@field public Holystrike number
+---@field public Stormstrike number
+---@field public Shadowstrike number
+---@field public Spellfire number
+---@field public Spellfrost number
+---@field public Spellshadow number
+---@field public Frostfire number
+---@field public Radiant number
+---@field public Holyfrost number
+---@field public Holystorm number
+---@field public Twilight number
+---@field public Froststorm number
+---@field public Volcanic number
+---@field public Astral number
+---@field public Plague number
+---@field public Shadowflame number
+---@field public Shadowfrost number
+---@field public Divine number
+---@field public combine fun(...: string): number
+---@field public contains fun(value: spell_schools_flags, flag: spell_schools_flags): boolean
+
 ---@class spell_type
 ---@field public TARGET number
 ---@field public POSITION number
