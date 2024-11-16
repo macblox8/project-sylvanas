@@ -199,6 +199,54 @@ function core.input.is_key_pressed(key)
     return false;
 end
 
+--- @return nil
+--- Starts local rotation to right side
+function core.input.turn_right_start()
+    return nil
+end
+
+--- @return nil
+--- Stops local rotation to right side
+function core.input.turn_right_stop()
+    return nil
+end
+
+--- @return nil
+--- Starts local rotation to left side
+function core.input.turn_left_start()
+    return nil
+end
+
+--- @return nil
+--- Stops local rotation to left side
+function core.input.turn_left_stop()
+    return nil
+end
+
+--- @return nil
+--- Starts local forward
+function core.input.move_forward_start()
+    return nil
+end
+
+--- @return nil
+--- Stops local forward
+function core.input.move_forward_stop()
+    return nil
+end
+
+--- @return nil
+--- Starts local backward
+function core.input.move_backward_start()
+    return nil
+end
+
+--- @return nil
+--- Stops local backward
+function core.input.move_backward_stop()
+    return nil
+end
+
 ---@class object_manager
 core.object_manager = {}
 
@@ -283,6 +331,13 @@ function core.spell_book.get_spell_description(spell_id)
     return ""
 end
 
+--- Retrieves the whole tooltip text of the specified buff.
+---@param buff_ptr buff
+---@return string The tooltip text of the specified buff.
+function core.spell_book.get_buff_description(buff_ptr)
+    return ""
+end
+
 --- Retrieves a table containing all spells and their corresponding IDs.
 ---@return table<number>
 function core.spell_book.get_spells()
@@ -295,10 +350,19 @@ end
 function core.spell_book.has_spell(spell_id)
     return false
 end
+
 --- Checks if the specified spell identified by its ID is learned by the localplayer.
 ---@param spell_id integer The ID of the spell.
 ---@return boolean Returns true if the specified spell is learned, otherwise returns false.
 function core.spell_book.is_spell_learned(spell_id)
+    return false
+end
+
+---@param n integer
+---@param flag integer
+---@param spell_id integer The ID of the spell.
+---@return boolean Returns true if the specified spell has certain attribute.
+function core.spell_book.spell_has_attribute(spell_id, n, flag)
     return false
 end
 

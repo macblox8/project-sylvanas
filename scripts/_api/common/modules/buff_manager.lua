@@ -33,3 +33,7 @@
 ---@field public get_debuff_cache fun(self: buff_manager, unit: game_object, custom_cache_duration?: number): buff_manager_cache_data[]
 --- Gets the aura cache for a unit.
 ---@field public get_aura_cache fun(self: buff_manager, unit: game_object, custom_cache_duration?: number): buff_manager_cache_data[]
+
+---@class buff_manager
+--- Check if the spell is currently on cooldown.
+---@field public get_buff_value_from_description fun(self: buff_manager, description_text: string, ignore_percentage: boolean, ignore_flat: boolean): number

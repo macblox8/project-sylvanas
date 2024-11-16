@@ -40,3 +40,11 @@
 ---@class spell_helper
 --- Check if the spell can be cast by considering various factors like cooldown, range, and caster's resources.
 ---@field public is_spell_castable fun(self: spell_helper, spell_id: number, caster: game_object, target: game_object, skip_facing: boolean, skips_range: boolean): boolean
+
+---@class spell_helper
+--- Check if the spell is currently on cooldown.
+---@field public get_spell_damage fun(self: spell_helper, spell_id: number, ignore_percentage?: boolean, ignore_flat?: boolean): number
+
+---@class spell_helper
+--- Check if the spell is currently on cooldown.
+---@field public get_spell_healing fun(self: spell_helper, spell_id: number, ignore_percentage?: boolean, ignore_flat?: boolean): number
