@@ -108,37 +108,39 @@
 ---@field public LineOfSight number
 ---@field public combine fun(...: string): number
 
+---@class schools_flag
+
 ---@class spell_schools_flags
----@field public Physical number
----@field public Holy number
----@field public Fire number
----@field public Nature number
----@field public Frost number
----@field public Shadow number
----@field public Arcane number
----@field public Spellstrike number
----@field public Flamestrike number
----@field public Froststrike number
----@field public Holystrike number
----@field public Stormstrike number
----@field public Shadowstrike number
----@field public Spellfire number
----@field public Spellfrost number
----@field public Spellshadow number
----@field public Frostfire number
----@field public Radiant number
----@field public Holyfrost number
----@field public Holystorm number
----@field public Twilight number
----@field public Froststorm number
----@field public Volcanic number
----@field public Astral number
----@field public Plague number
----@field public Shadowflame number
----@field public Shadowfrost number
----@field public Divine number
----@field public combine fun(...: string): number
----@field public contains fun(value: spell_schools_flags, flag: spell_schools_flags): boolean
+---@field public Physical schools_flag
+---@field public Holy schools_flag
+---@field public Fire schools_flag
+---@field public Nature schools_flag
+---@field public Frost schools_flag
+---@field public Shadow schools_flag
+---@field public Arcane schools_flag
+---@field public Spellstrike schools_flag
+---@field public Flamestrike schools_flag
+---@field public Froststrike schools_flag
+---@field public Holystrike schools_flag
+---@field public Stormstrike schools_flag
+---@field public Shadowstrike schools_flag
+---@field public Spellfire schools_flag
+---@field public Spellfrost schools_flag
+---@field public Spellshadow schools_flag
+---@field public Frostfire schools_flag
+---@field public Radiant schools_flag
+---@field public Holyfrost schools_flag
+---@field public Holystorm schools_flag
+---@field public Twilight schools_flag
+---@field public Froststorm schools_flag
+---@field public Volcanic schools_flag
+---@field public Astral schools_flag
+---@field public Plague schools_flag
+---@field public Shadowflame schools_flag
+---@field public Shadowfrost schools_flag
+---@field public Divine schools_flag
+---@field public combine fun(...: string): schools_flag
+---@field public contains fun(value: schools_flag, flag: schools_flag): boolean
 
 ---@class spell_type
 ---@field public TARGET number
@@ -249,6 +251,7 @@
 ---@field public mark_index mark_index
 ---@field public loss_of_control_type loss_of_control_type
 ---@field public collision_flags collision_flags
+---@field public spell_schools_flags spell_schools_flags
 ---@field public spell_type spell_type
 ---@field public trigger_mode trigger_mode
 ---@field public buff_db buff_db

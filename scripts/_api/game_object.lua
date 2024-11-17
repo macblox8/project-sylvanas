@@ -19,6 +19,7 @@
 ---@field public end_time integer
 ---@field public duration integer
 ---@field public type integer
+---@field public lockout_school schools_flag
 
 ---@class item_slot_info
 ---@field public object game_object
@@ -124,6 +125,8 @@
 ---@field public get_xp fun(self: game_object): number
 ---Returns the maximum experience points (XP) of the game object.
 ---@field public get_max_xp fun(self: game_object): number
+---Returns the total absorb shield of the game object.
+---@field public get_total_shield fun(self: game_object): number
 ---Returns whether the game object can attack the specified game object.
 ---@field public can_attack fun(self: game_object, other_game_object: game_object): boolean
 ---Returns whether the game object is an enemy with the specified game object.

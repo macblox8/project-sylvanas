@@ -338,3 +338,5 @@
 ---@field public AMPLIFYING_POISON number[]
 ---@field public CRIPPLING_POISON number[]
 ---@field public ATROPHIC_POISON number[]
+---@field public VAMPIRIC_TOUCH number[]
+---@field public EARTH_SHIELD number[]

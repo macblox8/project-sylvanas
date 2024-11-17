@@ -98,11 +98,32 @@ function core.get_map_id()
     return 0
 end
 
+---@return number
+function core.get_instance_id()
+    return 0
+end
+
+---@return number
+function core.get_difficulty_id()
+    return 0
+end
+
+---@return string
+function core.get_instance_name()
+    return ""
+end
+
+---@return string
+function core.get_difficulty_name()
+    return ""
+end
+
 --- Get the name of the current localplayer map.
 ---@return string The name of the current localplayer map.
 function core.get_map_name()
     return ""
 end
+
 
 ---@return boolean
 function core.is_debug()
@@ -441,9 +462,11 @@ end
 
 --- Retrieves the school flag of the specified spell identified by its ID.
 ---@param spell_id integer The ID of the spell.
----@return number The spell school flag.
+---@return schools_flag The spell school flag.
 function core.spell_book.get_spell_school(spell_id)
-    return 0
+
+    ---@type schools_flag
+    return nil
 end
 
 --- Retrieves the cast time of the specified spell identified by its ID.
