@@ -108,6 +108,11 @@ function core.get_difficulty_id()
     return 0
 end
 
+---@return number
+function core.get_keystone_level()
+    return 0
+end
+
 ---@return string
 function core.get_instance_name()
     return ""
@@ -268,6 +273,13 @@ function core.input.move_backward_stop()
     return nil
 end
 
+--- @return nil
+--- Faces to vec3
+--- @param point vec3
+function core.input.look_at(point)
+    return nil
+end
+
 ---@class object_manager
 core.object_manager = {}
 
@@ -299,6 +311,12 @@ end
 --- Retrieves a list of game objects with all the arena frames.
 ---@return game_object
 function core.object_manager.get_arena_frames()
+    return {}
+end
+
+--- Retrieves mouse_over object
+---@return game_object
+function core.object_manager.get_mouse_over_object()
     return {}
 end
 

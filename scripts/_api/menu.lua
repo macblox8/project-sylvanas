@@ -104,6 +104,7 @@
 ---@field public get_position fun(self:window):vec2
 ---@field public get_mouse_pos fun(self:window):vec2
 ---@field public get_text_size fun(self:window, text:string):vec2
+---@field public force_window_size fun(self:window, size:vec2):nil
 ---@field public get_text_centered_x_pos fun(self:window, text:string):number
 ---@field public set_current_context_dynamic_drawing_offset fun(self:window, offset:vec2):nil
 ---@field public get_current_context_dynamic_drawing_offset fun(self:window):vec2

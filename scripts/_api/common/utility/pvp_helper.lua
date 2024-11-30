@@ -63,3 +63,6 @@
 ---@class pvp_helper
 ---@field public purgeable_buffs {buff_id: number, buff_name: string, priority: number, min_remaining: number}[] 
 ---@field public is_purgeable fun(self: pvp_helper, unit: game_object, min_remaining: number?): {is_purgeable: boolean, table: {buff_id: number, buff_name: string, priority: number, min_remaining: number}?, current_remaining_ms: number, expire_time: number}
+
+---@class pvp_helper
+---@field public is_melee fun(self: pvp_helper, unit: game_object): boolean

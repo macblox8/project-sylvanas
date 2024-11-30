@@ -15,7 +15,7 @@
 
 ---@class control_panel_helper
 --- Inserts a toggle into the control panel table with display name and keybind element.
----@field public insert_toggle_ fun(self: control_panel_helper, control_panel_table: table, display_name: string, keybind_element: userdata, only_drag_drop: boolean?, no_drag_and_drop: boolean?): boolean
+---@field public insert_toggle_ fun(self: control_panel_helper, control_panel_table: table, display_name: string, keybind_element: keybind | userdata, only_drag_drop: boolean?, no_drag_and_drop: boolean?): boolean
 
 ---@class control_panel_helper
 --- Inserts a combo into the control panel table. 

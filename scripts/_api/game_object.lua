@@ -28,10 +28,14 @@
 ---@class game_object
 ---Returns whether the game_object is valid.
 ---@field public is_valid fun(self: game_object): boolean
+---Returns whether the game_object is visible.
+---@field public is_visible fun(self: game_object): boolean
 ---Returns the type of the game object.
 ---@field public get_type fun(self: game_object): number
 ---Returns the class of the game object.
 ---@field public get_class fun(self: game_object): number
+---Returns the spec_id of the game object.
+---@field public get_specialization_id fun(self: game_object): number
 ---Returns the npc_id of the game object.
 ---@field public get_npc_id fun(self: game_object): number
 ---Returns the item_id of the game object.
@@ -51,6 +55,23 @@
 --- 7 = Red "X" Cross  
 --- 8 = White Skull  
 ---@field public get_target_marker_index fun(self: game_object): number
+---Returns the creature_type id of the game object.  
+-- 1 -> Beast
+-- 2 -> Dragonkin
+-- 3 -> Demon
+-- 4 -> Elemental
+-- 5 -> Giant
+-- 6 -> Undead
+-- 7 -> Humanoid
+-- 8 -> Critter
+-- 9 -> Mechanical
+-- 10 -> Not specified
+-- 11 -> Totem
+-- 12 -> Non-combat Pet
+-- 13 -> Gas Cloud
+-- 14 -> Wild Pet
+-- 15 -> Aberration
+---@field public get_creature_type fun(self: game_object): number
 ---Returns the classification id of the game object.  
 --- -1 = unknown  
 --- 0 = normal  
@@ -83,6 +104,8 @@
 ---@field public is_dead fun(self: game_object): boolean
 ---Returns whether the game object is ghost.
 ---@field public is_ghost fun(self: game_object): boolean
+---Returns whether the game object is feigning death.
+---@field public is_feign_death fun(self: game_object): boolean
 ---Returns whether the game object is a basic object.
 ---@field public is_basic_object fun(self: game_object): boolean
 ---Returns whether the game object is a player.
@@ -153,6 +176,8 @@
 ---@field public get_direction fun(self: game_object): vec3
 ---Returns whether the game object is a pet.
 ---@field public is_pet fun(self: game_object): boolean
+---Returns whether the game object is a minion (alt pets).
+---@field public is_minion fun(self: game_object): boolean
 ---Returns whether the game object is a bag type item.
 ---@field public is_item_bag fun(self: game_object): boolean
 ---Returns the stack count of the item in our bag.
