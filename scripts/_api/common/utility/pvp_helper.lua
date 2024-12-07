@@ -7,7 +7,7 @@
 
 ---@class pvp_helper
 ---@field public is_player fun(self: pvp_helper, unit: game_object): boolean
----@field public is_pvp_scenario fun(self: pvp_helper, local_player: game_object, target: game_object): boolean
+---@field public is_pvp_scenario fun(self: pvp_helper): boolean
 ---@field public cc_flags cc_flags_table
 ---@field public cc_flag_descriptions table<number, string>
 ---@field public cc_debuffs table<number, {debuff_id: number, debuff_name: string, flag: number}>

@@ -250,6 +250,30 @@ function core.input.turn_left_stop()
 end
 
 --- @return nil
+--- Starts local strafe to right
+function core.input.strafe_right_start()
+    return nil
+end
+
+--- @return nil
+--- Stops local strafe to right
+function core.input.strafe_right_stop()
+    return nil
+end
+
+--- @return nil
+--- Starts local strafe to left
+function core.input.strafe_left_start()
+    return nil
+end
+
+--- @return nil
+--- Stops local strafe to left
+function core.input.strafe_left_stop()
+    return nil
+end
+
+--- @return nil
 --- Starts local forward
 function core.input.move_forward_start()
     return nil
@@ -271,6 +295,32 @@ end
 --- Stops local backward
 function core.input.move_backward_stop()
     return nil
+end
+
+--- @return nil
+function core.input.cancel_spells()
+    return nil
+end
+
+--- @return nil
+function core.input.enable_movement()
+    return nil
+end
+
+--- @return nil
+function core.input.disable_movement()
+    return nil
+end
+
+--- @return nil
+--- @param object game_object
+function core.input.set_control_object(object)
+    return nil
+end
+
+--- @return game_object
+function core.input.get_control_object(object)
+    return object
 end
 
 --- @return nil

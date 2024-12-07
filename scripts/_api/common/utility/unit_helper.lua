@@ -40,6 +40,7 @@
 --- Third = Health Percentage Raw
 --- Fourth = Incoming Damage Relative to Health (Incoming Percentage)
 --- Calculate the health percentage of a unit considering incoming damage within a specified time frame.
+--- local health_percentage_inc, incoming_damage, health_percentage_raw, incoming_damage_percentage = fnc()
 ---@field public get_health_percentage_inc fun(self: unit_helper, unit: game_object, time_limit: number?): number, number, number, number
 
 ---@class unit_helper
