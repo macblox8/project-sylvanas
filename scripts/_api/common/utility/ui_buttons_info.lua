@@ -15,6 +15,7 @@
 ---@field public is_logic_attempting_only_once fun(self: ui_buttons_info): boolean
 ---@field public get_timeout_time fun(self: ui_buttons_info): number
 ---@field public set_no_render_timeout_time_slider_flag fun(self: ui_buttons_info, state: boolean): nil
+---@field public is_target_dr_allowed fun(self: ui_buttons_info, target: game_object, cc_type: number, hit_time: number): nil
 
 -- Example Usage:
 -- local ui = require("common/utility/ui_buttons_info")

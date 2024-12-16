@@ -129,7 +129,6 @@ function core.get_map_name()
     return ""
 end
 
-
 ---@return boolean
 function core.is_debug()
     return false
@@ -142,6 +141,22 @@ end
 
 ---@return number
 function core.get_user_flags()
+    return 0
+end
+
+---@return string
+---@param text string
+function core.read_file(text)
+    return ""
+end
+
+---@return string
+function core.get_account_name()
+    return ""
+end
+
+---@return number
+function core.get_height_for_position()
     return 0
 end
 
@@ -327,6 +342,11 @@ end
 --- Faces to vec3
 --- @param point vec3
 function core.input.look_at(point)
+    return nil
+end
+
+--- @return nil
+function core.input.stop_attack()
     return nil
 end
 

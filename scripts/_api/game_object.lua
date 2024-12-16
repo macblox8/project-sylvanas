@@ -174,6 +174,8 @@
 ---@field public get_rotation fun(self: game_object): number
 ---Returns the direction of the game object.
 ---@field public get_direction fun(self: game_object): vec3
+---Returns the direction of the game object movement manager.
+---@field public get_movement_direction fun(self: game_object): vec3
 ---Returns whether the game object is a pet.
 ---@field public is_pet fun(self: game_object): boolean
 ---Returns whether the game object is a minion (alt pets).
