@@ -146,7 +146,7 @@
 ---@field public push_font fun(self:window, font_id:integer):nil
 ---@field public add_menu_element_pos_offset fun(self:window, pos_offset:vec2):nil
 ---@field public begin_group fun(self:window, begin_func:function):nil
----@field public begin_window_sub_context fun(self:window, begin_func:function):nil
+---@field public begin_window_sub_context fun(self:window, offset:vec2, add_flags:boolean, begin_func:function):nil
 ---@field public set_next_window_close_cross_pos_offset fun(self:window, offset:vec2):nil
 ---@field public render_text_clipped fun(self:window, rect_start:vec2, rect_end:vec2, text:string):nil
 ---@field public begin_popup fun(self:window, bg_color:color, border_color:color, size:vec2, pos:vec2, is_close_on_release:boolean, is_triggering_from_button:boolean, begin_func:function):boolean

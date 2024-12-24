@@ -66,7 +66,7 @@
 ---@field public SILENCE number
 ---@field public DISARM number
 ---@field public ANY number
----@field public combine fun(...: string): number
+---@field public combine fun(...: number): number
 
 ---@class damage_type_flags_table
 ---@field public PHYSICAL number

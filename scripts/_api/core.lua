@@ -156,8 +156,19 @@ function core.get_account_name()
 end
 
 ---@return number
-function core.get_height_for_position()
+---@param pos vec3
+function core.get_height_for_position(pos)
     return 0
+end
+
+---@return nil
+function core.disable_drawings()
+    return nil
+end
+
+---@return nil
+function core.enable_drawings()
+    return nil
 end
 
 ---@class inventory
@@ -594,6 +605,16 @@ core.graphics = {}
 --- @overload fun(unique_id:string, label: string, message: string, duration_s: number, color: color, x_pos_offset: number, y_pos_offset: number, max_background_alpha: number, length: number):boolean
 function core.graphics.add_notification(unique_id, label, message, duration_ms, color, x_pos_offset, y_pos_offset, max_background_alpha, length, height)
     return false
+end
+
+---@return vec2 main_menu_screen_position
+function core.graphics.get_main_menu_screen_pos()
+    return {}
+end
+
+---@return vec2 main_menu_screen_size
+function core.graphics.get_main_menu_screen_size()
+    return {}
 end
 
 --- @param unique_id string UNIQUE identifier of the notification.
