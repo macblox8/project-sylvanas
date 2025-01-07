@@ -3,7 +3,7 @@
 ---@field public is_open fun():boolean
 ---@field public render fun(self:tree_node, header:string, callback:function):nil
 ---@field public get_widget_bounds fun(self:tree_node):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
-
+---@field public set_open_state fun(self:tree_node, state:boolean):nil
 ---@class checkbox
 ---@field public get_state fun():boolean
 ---@field public get_type fun(self:checkbox)
@@ -43,8 +43,8 @@
 ---@field public get_label fun(self:keybind):string -- The menu element needs to be rendered for this to return a string different than ""
 ---@field public get_widget_bounds fun(self:combobox):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
 ---@field public set fun(self:combobox, new_value:number):nil
----@field public is_showing_on_permashow fun(self:combobox):boolean
----@field public set_is_showing_on_permashow fun(self:combobox):nil
+---@field public is_showing_on_control_panel fun(self:combobox):boolean
+---@field public set_is_showing_on_control_panel fun(self:combobox):nil
 ---@field public render fun(self:combobox, label:string, options:table, tooltip:string|nil):nil
 
 ---@class combobox_reorderable
@@ -60,8 +60,8 @@
 ---@field public get_widget_bounds fun(self:keybind):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
 ---@field public get_toggle_state fun(self:keybind):boolean
 ---@field public set_key fun(self:keybind, new_key:number):nil
----@field public set_is_showing_on_permashow fun(self:keybind):nil
----@field public is_showing_on_permashow fun(self:keybind):boolean
+---@field public set_is_showing_on_control_panel fun(self:keybind):nil
+---@field public is_showing_on_control_panel fun(self:keybind):boolean
 ---@field public set_toggle_state fun(self:keybind, new_state:boolean):nil
 ---@field public render fun(self:keybind, label:string, tooltip:string|nil):nil
 
@@ -149,6 +149,7 @@
 ---@field public begin_window_sub_context fun(self:window, offset:vec2, add_flags:boolean, begin_func:function):nil
 ---@field public set_next_window_close_cross_pos_offset fun(self:window, offset:vec2):nil
 ---@field public render_text_clipped fun(self:window, rect_start:vec2, rect_end:vec2, text:string):nil
+---@field public block_input_capture fun(self:window):nil
 ---@field public begin_popup fun(self:window, bg_color:color, border_color:color, size:vec2, pos:vec2, is_close_on_release:boolean, is_triggering_from_button:boolean, begin_func:function):boolean
 --note: you can also pass special_window_flag_1:integer, special_window_flag_2:integer, special_window_flag_3:integer after the cross_style parameter. Check enums to see what these parameters represent
 

@@ -19,7 +19,12 @@
 
 ---@class plugin_helper
 --- Draws centered text at the character's screen position with an optional vertical offset.
----@field public draw_text_character_center fun(self: plugin_helper, text: string, text_color: color?, y_offset: number?)
+---@field public draw_text_character_center fun(self: plugin_helper, text: string, text_color: color?, y_offset: number?, is_static: boolean?)
+
+---@class plugin_helper
+--- Draws centered text at the character's screen position with an optional vertical offset.
+--- text, text_color, border_color, screen_position, size
+---@field public draw_text_message fun(self: plugin_helper, text: string, text_color: color, border_color: color, screen_position: vec2, size: vec2, is_static:boolean, add_rectangles: boolean, unique_id: string)
 
 ---@class plugin_helper
 --- Calculates latency based on the current ping, clamped to a maximum value.
