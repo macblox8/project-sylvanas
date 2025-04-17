@@ -1,0 +1,1463 @@
+---@class spell_book
+core.spell_book = {}
+
+--- Retrieves the local_player specialization_id
+---@return number The local_player specialization_id
+function core.spell_book.get_specialization_id()
+    return 0
+end
+
+--- Retrieves the global cooldown duration in seconds.
+---@return number The global cooldown duration in seconds.
+function core.spell_book.get_global_cooldown()
+    return 0
+end
+
+--- Retrieves the cooldown duration of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return number The cooldown duration of the specified spell in seconds.
+function core.spell_book.get_spell_cooldown(spell_id)
+    return 0
+end
+
+
+--- Indicates if the spell can be usable based on many requirements.
+---@param spell_id integer The ID of the spell.
+---@return boolean to indicate if the spell is usable.
+function core.spell_book.is_usable_spell(spell_id)
+    return false
+end
+
+--- Retrieves the amount of current charges of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return integer The amount of current stacks of the specified spell.
+function core.spell_book.get_spell_charge(spell_id)
+    return 0
+end
+
+--- Retrieves the amount of max charges of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return integer The amount of max stacks of the specified spell.
+function core.spell_book.get_spell_charge_max(spell_id)
+    return 0
+end
+
+--- Retrieves the total cooldown of the specified spell charge identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return integer The amount of max stacks of the specified spell.
+function core.spell_book.get_spell_charge_cooldown_duration(spell_id)
+    return 0
+end
+
+--- Retrieves the last time a charge was triggered of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return integer The amount of max stacks of the specified spell.
+function core.spell_book.get_spell_charge_cooldown_start_time(spell_id)
+    return 0
+end
+
+--- Retrieves the name of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return string The name of the specified spell.
+function core.spell_book.get_spell_name(spell_id)
+    return ""
+end
+
+--- Retrieves the whole tooltip text of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return string The tooltip text of the specified spell.
+function core.spell_book.get_spell_description(spell_id)
+    return ""
+end
+
+--- Retrieves the whole tooltip text of the specified buff.
+---@param buff_ptr buff
+---@return string The tooltip text of the specified buff.
+function core.spell_book.get_buff_description(buff_ptr)
+    return ""
+end
+
+--- Retrieves a table containing all spells and their corresponding IDs.
+---@return table<number>
+function core.spell_book.get_spells()
+    return {}
+end
+
+--- Checks if the specified spell identified by its ID is owned by the localplayer.
+---@param spell_id integer The ID of the spell.
+---@return boolean Returns true if the specified spell is equipped, otherwise returns false.
+function core.spell_book.has_spell(spell_id)
+    return false
+end
+
+--- Checks if the specified spell identified by its ID is learned by the localplayer.
+---@param spell_id integer The ID of the spell.
+---@return boolean Returns true if the specified spell is learned, otherwise returns false.
+function core.spell_book.is_spell_learned(spell_id)
+    return false
+end
+
+---@param n integer
+---@param flag integer
+---@param spell_id integer The ID of the spell.
+---@return boolean Returns true if the specified spell has certain attribute.
+function core.spell_book.spell_has_attribute(spell_id, n, flag)
+    return false
+end
+
+--- Returns the spell_id from the talent_id.
+---@param talent_id integer The ID of the talent.
+---@return number Returns the spell_id from the talent_id.
+function core.spell_book.get_talent_spell_id(talent_id)
+    return 0
+end
+
+--- Returns the name from the talent_id.
+---@param talent_id integer The ID of the talent.
+---@return string Returns the name from the talent_id.
+function core.spell_book.get_talent_name(talent_id)
+    return ""
+end
+
+--- Checks if the specified spell is melee type.
+---@param spell_id integer The ID of the spell.
+---@return boolean Returns true if the specified spell is melee type.
+function core.spell_book.is_melee_spell(spell_id)
+    return false
+end
+
+--- Checks if the specified spell is an skillshot.
+---@param spell_id integer The ID of the spell.
+---@return boolean Returns true if the specified spell is skillshot.
+function core.spell_book.is_spell_position_cast(spell_id)
+    return false
+end
+
+--- Checks if the cursor is currently busy with an skillshot.
+---@return boolean Returns true if the cursor is currently busy with an skillshot.
+function core.spell_book.cursor_has_spell()
+    return false
+end
+
+---@class spell_costs
+---@field public min_cost number
+---@field public cost number
+---@field public cost_per_sec number
+---@field public cost_type number
+---@field public required_buff_id number
+
+--- Returns spell_costs structure
+---@param spell_id integer The ID of the spell.
+---@return table<spell_costs>
+function core.spell_book.get_spell_costs(spell_id)
+    return {}
+end
+
+---@class range_data
+---@field public min number
+---@field public max number
+
+--- Retrieves the range data of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return range_data A table containing the minimum and maximum range of the specified spell.
+function core.spell_book.get_spell_range_data(spell_id)
+    return {}
+end
+
+--- Retrieves the minimum range of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return number The minimum range of the specified spell.
+function core.spell_book.get_spell_min_range(spell_id)
+    return 0
+end
+
+--- Retrieves the maximum range of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return number The maximum range of the specified spell.
+function core.spell_book.get_spell_max_range(spell_id)
+    return 0
+end
+
+--- Retrieves the school flag of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return schools_flag The spell school flag.
+function core.spell_book.get_spell_school(spell_id)
+
+    ---@type schools_flag
+    return nil
+end
+
+--- Retrieves the cast time of the specified spell identified by its ID.
+---@param spell_id integer The ID of the spell.
+---@return number The cast time in seconds.
+function core.spell_book.get_spell_cast_time(spell_id)
+    return 0
+end
+
+--- Note: This Function is deprecated
+--- Alternative: Common Utility Spell Helper
+--- Retrieves the damage value of the spell_id.
+---@param spell_id integer The ID of the spell.
+---@return number The damage value of the spell.
+function core.spell_book.get_spell_damage(spell_id)
+    return 0
+end
+
+--- Retrieves the mode flag of our pet
+---@return number
+function core.spell_book.get_pet_mode()
+    return 0
+end
+
+--- Retrieves a table with all the pet spells
+---@return table
+function core.spell_book.get_pet_spells()
+    return {}
+end
+
+---@class mount_info
+---@field public mount_name string The name of the mount.
+---@field public spell_id integer The spell ID associated with the mount.
+---@field public mount_id integer The unique ID of the mount.
+---@field public is_active boolean Whether the mount is currently active.
+---@field public is_usable boolean Whether the mount is usable.
+---@field public mount_type integer The type/category of the mount.
+
+--- Retrieves the number of mounts available to the player.
+---@return integer The total number of mounts.
+function core.spell_book.get_mount_count()
+    return 0
+end
+
+--- Retrieves information about a specific mount by its index.
+---@param mount_index integer The index of the mount.
+---@return mount_info|nil A table containing the mount information, or nil if the index is invalid.
+function core.spell_book.get_mount_info(mount_index)
+    return {}
+end
+
+---@class graphics
+core.graphics = {}
+
+--- Adds a notification to the display.
+--- @param unique_id string UNIQUE identifier for the notification.
+--- @param label string The title or heading for the notification.
+--- @param message string The main content of the notification.
+--- @param duration_ms integer The duration in seconds that the notification should be displayed.
+--- @param color color The color of the notification text.
+--- @param x_pos_offset number Optional horizontal position offset, defaults to 0.0.
+--- @param y_pos_offset number Optional vertical position offset, defaults to 0.0.
+--- @param max_background_alpha number Optional maximum background alpha (opacity), defaults to 0.95.
+--- @param length number Optional length of the notification box, defaults to 0.0.
+--- @param height number Optional height of the notification box, defaults to 0.0.
+--- @overload fun(unique_id:string, label: string, message: string, duration_s: number, color: color):boolean
+--- @overload fun(unique_id:string, label: string, message: string, duration_s: number, color: color, x_pos_offset: number):boolean
+--- @overload fun(unique_id:string, label: string, message: string, duration_s: number, color: color, x_pos_offset: number, y_pos_offset: number):boolean
+--- @overload fun(unique_id:string, label: string, message: string, duration_s: number, color: color, x_pos_offset: number, y_pos_offset: number, max_background_alpha: number):boolean
+--- @overload fun(unique_id:string, label: string, message: string, duration_s: number, color: color, x_pos_offset: number, y_pos_offset: number, max_background_alpha: number, length: number):boolean
+function core.graphics.add_notification(unique_id, label, message, duration_ms, color, x_pos_offset, y_pos_offset, max_background_alpha, length, height)
+    return false
+end
+
+---@return vec2 main_menu_screen_position
+function core.graphics.get_main_menu_screen_pos()
+    return {}
+end
+
+---@return string key_name
+---@param key integer
+function core.graphics.translate_vkey_to_string(key)
+    return ""
+end
+
+---@return vec2 main_menu_screen_size
+function core.graphics.get_main_menu_screen_size()
+    return {}
+end
+
+--- @param unique_id string UNIQUE identifier of the notification.
+--- @param delay number|nil Optional delay to trigger (eg. delay = 5.0, this function will return true if the notification was clicked 5 seconds ago), defaults to 0.0
+function core.graphics.is_notification_clicked(unique_id, delay)
+    return false
+end
+
+-- Returns true if the notification is being shown on screen
+--- @param unique_id string UNIQUE identifier of the notification.
+function core.graphics.is_notification_active(unique_id)
+    return false
+end
+
+--- Retrieves the current screen position of notifications.
+---@return vec2 notifications_position The screen coordinates (x, y) where notifications are displayed.
+function core.graphics.get_notifications_menu_position()
+    return {}
+end
+
+--- Retrieves the default size of notifications.
+---@return vec2 notifications_default_size The default width and height of notifications.
+function core.graphics.get_notifications_default_size()
+    return {}
+end
+
+---@return string current_dragged_menu_element_pending_to_be_added_to_control_panel_label The current dragged menu element that is pending to be added to control panel
+function core.graphics.get_current_control_panel_element_label()
+    return ""
+end
+
+---@param label string
+function core.graphics.set_current_control_panel_element_label(label) end
+
+--- Retrieves the scaled width - Main resolution is your current resolution X, must be hardcoded. (Eg. 1920)
+---@return number scaled_width
+---@param value_to_scale number
+---@param main_resolution number
+function core.graphics.scale_width_to_screen_size(value_to_scale, main_resolution)
+    return 0.0
+end
+
+--- Retrieves the scaled height - Main resolution is your current resolution Y, must be hardcoded. (Eg. 1080)
+---@return number scaled_width
+---@param value_to_scale number
+---@param main_resolution number
+function core.graphics.scale_height_to_screen_size(value_to_scale, main_resolution)
+    return 0.0
+end
+
+--- Retrieves the scaled size - Main resolution is your current resolution. Must be hardcoded. (Eg. 1920*1080)
+---@return vec2 scaled_size
+---@param value_to_scale vec2
+---@param main_resolution vec2
+function core.graphics.scale_size_to_screen_size(value_to_scale, main_resolution)
+    return {}
+end
+
+--- Line Of Sight
+---@return boolean
+---@param caster game_object
+---@param target game_object
+function core.graphics.is_line_of_sight(caster, target)
+    return false
+end
+
+--- Trace Line
+---@return boolean
+---@param pos1 vec3
+---@param pos2 vec3
+---@param flags number
+function core.graphics.trace_line(pos1, pos2, flags)
+    return false
+end
+
+--- World to Screen
+---@param position vec3 The 3D world position to convert.
+---@return vec2 | nil
+function core.graphics.w2s(position)
+    return {}
+end
+
+--- World to Screen
+---@return vec2 --| nil
+function core.graphics.get_screen_size()
+    return {}
+end
+
+--- Cursor World Position (Vec3)
+---@return vec3
+function core.graphics.get_cursor_world_position()
+    return {}
+end
+
+--- Returns true when the main menu is open
+---@return boolean
+function core.graphics.is_menu_open()
+    return false
+end
+
+--- Render 2D text.
+---@param text string The text to render.
+---@param position vec2 The position where the text will be rendered.
+---@param font_size number The font size of the text.
+---@param color color The color of the text.
+---@param centered? boolean Indicates whether the text should be centered at the specified position. Default is false.
+---@param font_id? integer The font ID. Default is 0.
+function core.graphics.text_2d(text, position, font_size, color, centered, font_id) end
+
+--- Render 3D text.
+---@param text string The text to render.
+---@param position vec3 The position in 3D space where the text will be rendered.
+---@param font_size number The font size of the text.
+---@param color color The color of the text.
+---@param centered? boolean Indicates whether the text should be centered at the specified position. Default is false.
+---@param font_id? integer The font ID. Default is 0.
+function core.graphics.text_3d(text, position, font_size, color, centered, font_id) end
+
+--- Get Text Width
+---@return number
+---@param text string The text to render.
+---@param font_size number The font size of the text.
+---@param font_id? integer The font ID. Default is 0.
+function core.graphics.get_text_width(text, font_size, font_id)
+    return 0
+end
+
+--- Draw 2D Line
+---@param start_point vec2 The start point of the line.
+---@param end_point vec2 The end point of the line.
+---@param color color The color of the line.
+---@param thickness? number The thickness of the line. Default is 1.
+function core.graphics.line_2d(start_point, end_point, color, thickness) end
+
+--- Draw 2D Rectangle Outline
+---@param top_left_point vec2 The top-left corner point of the rectangle.
+---@param width number The width of the rectangle.
+---@param height number The height of the rectangle.
+---@param color color The color of the rectangle outline.
+---@param thickness? number The thickness of the outline. Default is 1.
+---@param rounding? number The rounding of corners. Default is 0.
+function core.graphics.rect_2d(top_left_point, width, height, color, thickness, rounding) end
+
+--- Draw 2D Filled Rectangle
+---@param top_left_point vec2 The top-left corner point of the rectangle.
+---@param width number The width of the rectangle.
+---@param height number The height of the rectangle.
+---@param color color The color of the rectangle outline.
+---@param rounding? number The rounding of corners. Default is 0.
+function core.graphics.rect_2d_filled(top_left_point, width, height, color, rounding) end
+
+--- Draw 3D Line
+---@param start_point vec3 The start point of the line in 3D space.
+---@param end_point vec3 The end point of the line in 3D space.
+---@param color color The color of the line.
+---@param thickness? number The thickness of the line. Default is 1.
+---@param fade_factor? number The thickness of the outline. Default is 2.5.
+---@param has_volume? boolean Add volume. Default true.
+function core.graphics.line_3d(start_point, end_point, color, thickness, fade_factor, has_volume) end
+
+--- Draw 3D Rectangle Outline
+-- ---@param p1 vec3 The first corner point of the rectangle in 3D space.
+-- ---@param p2 vec3 The second corner point of the rectangle in 3D space.
+-- ---@param p3 vec3 The third corner point of the rectangle in 3D space.
+-- ---@param p4 vec3 The fourth corner point of the rectangle in 3D space.
+-- ---@param color color The color of the rectangle outline.
+-- ---@param thickness? number The thickness of the outline. Default is 1.
+-- function core.graphics.rect_3d(p1, p2, p3, p4, color, thickness) end
+
+--- Draw 3D Rectangle Outline New
+---@param origin vec3
+---@param destination vec3
+---@param color color The color of the rectangle outline.
+---@param thickness? number The thickness of the line. Default is 1.
+---@param fade_factor? number The thickness of the outline. Default is 2.5.
+function core.graphics.rect_3d(origin, destination, width, color, thickness, fade_factor) end
+
+--- Draw 3D Filled Rectangle
+---@param p1 vec3 The first corner point of the rectangle in 3D space.
+---@param p2 vec3 The second corner point of the rectangle in 3D space.
+---@param p3 vec3 The third corner point of the rectangle in 3D space.
+---@param p4 vec3 The fourth corner point of the rectangle in 3D space.
+---@param color color The fill color of the rectangle.
+function core.graphics.rect_3d_filled(p1, p2, p3, p4, color) end
+
+--- Draw 2D Circle Outline
+---@param center vec2 The center point of the circle.
+---@param radius number The radius of the circle.
+---@param color color The color of the circle outline.
+---@param thickness? number The thickness of the outline. Default is 1.
+function core.graphics.circle_2d(center, radius, color, thickness) end
+
+--- Draw 2D Circle Outline Gradient
+---@param center vec2 The center point of the circle.
+---@param radius number The radius of the circle.
+---@param color_1 color
+---@param color_2 color
+---@param color_3 color
+---@param thickness? number The thickness of the outline. Default is 1.
+function core.graphics.circle_2d_gradient(center, radius, color_1, color_2, color_3, thickness) end
+
+--- Draw 2D Filled Circle
+---@param center vec2 The center point of the circle.
+---@param radius number The radius of the circle.
+---@param color color The fill color of the circle.
+function core.graphics.circle_2d_filled(center, radius, color) end
+
+--- Draw 3D Circle Outline
+---@param center vec3 The center point of the circle in 3D space.
+---@param radius number The radius of the circle.
+---@param color color The color of the circle outline.
+---@param thickness? number The thickness of the outline. Default is 1.
+---@param fade_factor? number The factor / strenght it fades out, bigger value, faster fade. Default is 2.5.
+function core.graphics.circle_3d(center, radius, color, thickness, fade_factor) end
+
+--- Draw 3D Circle Outline Percentage
+---@param center vec3 The center point of the circle in 3D space.
+---@param radius number The radius of the circle.
+---@param color color The color of the circle outline.
+---@param percentage number The percentage of the circle to render.
+---@param thickness? number The thickness of the outline. Default is 1.
+function core.graphics.circle_3d_percentage(center, radius, color, percentage, thickness) end
+
+--- Draw 3D Circle Outline Gradient
+---@param center vec3 The center point of the circle in 3D space.
+---@param radius number The radius of the circle.
+---@param color_1 color
+---@param color_2 color
+---@param color_3 color
+---@param thickness? number The thickness of the outline. Default is 1.
+function core.graphics.circle_3d_gradient(center, radius, color_1, color_2, color_3, thickness) end
+
+--- Draw 3D Cone
+---@param center vec3 The center point of the circle in 3D space.
+---@param target_pos vec3 The target position of the cone
+---@param radius number The radius of the cone
+---@param angle_degrees number
+---@param color color
+---@param fade_power number | nil
+function core.graphics.cone_3d(center, target_pos, radius, angle_degrees, color, fade_power) end
+
+--- Draw 3D Circle Outline Gradient Percentage
+---@param center vec3 The center point of the circle in 3D space.
+---@param radius number The radius of the circle.
+---@param color_1 color
+---@param color_2 color
+---@param color_3 color
+---@param percentage number The percentage of the circle to render.
+---@param thickness? number The thickness of the outline. Default is 1.
+function core.graphics.circle_3d_gradient_percentage(center, radius, color_1, color_2, color_3, percentage, thickness) end
+
+--- Draw 3D Filled Circle
+---@param center vec3 The center point of the circle in 3D space.
+---@param radius number The radius of the circle.
+---@param color color The fill color of the circle.
+function core.graphics.circle_3d_filled(center, radius, color) end
+
+--- Draw 2D Filled Triangle
+---@param p1 vec2 The first corner point of the triangle in 2D space.
+---@param p2 vec2 The second corner point of the triangle in 2D space.
+---@param p3 vec2 The third corner point of the triangle in 2D space.
+---@param color color The fill color of the triangle.
+function core.graphics.triangle_2d_filled(p1, p2, p3, color) end
+
+--- Draw 3D Filled Triangle
+---@param p1 vec3 The first corner point of the triangle in 3D space.
+---@param p2 vec3 The second corner point of the triangle in 3D space.
+---@param p3 vec3 The third corner point of the triangle in 3D space.
+---@param color color The fill color of the triangle.
+function core.graphics.triangle_3d_filled(p1, p2, p3, color) end
+
+--- Load Image
+---@param path_to_asset string The path to the image file.
+function core.graphics.load_image(path_to_asset) end
+
+--- Draw Image
+---@param image any Loaded image object.
+---@param position vec2 The position to place the image.
+function core.graphics.draw_image(image, position) end
+
+--- Renders System Menu from C++
+function core.graphics.render_system_menu() end
+
+---@class menu
+core.menu = {}
+
+--- Registers the menu for interaction.
+function core.menu.register_menu() end
+
+--- Creates a new tree node instance
+---@return tree_node
+function core.menu.tree_node()
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new checkbox instance.
+---@param default_state boolean The default state of the checkbox.
+---@param id string The unique identifier for the checkbox.
+---@return checkbox
+function core.menu.checkbox(default_state, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new checkbox instance.
+---@param default_key integer The default state of the checkbox.
+---@param initial_toggle_state boolean The initial toggle state of the keybind
+---@param default_state boolean The default state of the checkbox
+---@param show_in_binds boolean The default show in binds state of the checkbox
+---@param default_mode_state integer The default show in binds state of the checkbox  -> 0 is hold, 1 is toggle, 2 is always
+---@param id string The unique identifier for the checkbox.
+---@return key_checkbox
+function core.menu.key_checkbox(default_key, initial_toggle_state, default_state, show_in_binds,  default_mode_state, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new slider with integer values.
+---@param min_value number The minimum value of the slider.
+---@param max_value number The maximum value of the slider.
+---@param default_value number The default value of the slider.
+---@param id string The unique identifier for the slider.
+---@return slider_int
+function core.menu.slider_int(min_value, max_value, default_value, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new slider with floating-point values.
+---@param min_value number The minimum value of the slider.
+---@param max_value number The maximum value of the slider.
+---@param default_value number The default value of the slider.
+---@param id string The unique identifier for the slider.
+---@return slider_float
+function core.menu.slider_float(min_value, max_value, default_value, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new combobox.
+---@param default_index number The default index of the combobox options (1-based).
+---@param id string The unique identifier for the combobox.
+---@return combobox
+function core.menu.combobox(default_index, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new combobox_reorderable.
+---@param default_index number The default index of the combobox options (1-based).
+---@param id string The unique identifier for the combobox.
+---@return combobox_reorderable
+function core.menu.combobox_reorderable(default_index, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new keybind.
+---@param default_value number The default value for the keybind.
+---@param initial_toggle_state boolean The initial toggle state for the keybind.
+---@param id string The unique identifier for the keybind.
+---@return keybind
+function core.menu.keybind(default_value, initial_toggle_state, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new button.
+---@return button
+---@param id string The unique identifier for the button.
+function core.menu.button(id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new color picker.
+---@param default_color color The default color value.
+---@param id string The unique identifier for the color picker.
+---@return color_picker
+function core.menu.colorpicker(default_color, id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new header
+---@return header
+function core.menu.header()
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new text input
+---@return text_input
+function core.menu.text_input(id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+--- Creates a new window
+---@return window
+function core.menu.window(window_id)
+    return {} -- Empty return statement to implicitly return nil
+end
+
+
+-- Example:
+-- ---@type dungeons_helper
+-- local x = require("common/utility/dungeons_helper")
+-- x: -> IntelliSense
+-- Warning: Access with ":", not "."
+
+---@class dungeons_helper
+---@field public is_heroic_dungeon fun(self: dungeons_helper): boolean
+---@field public is_mythic_dungeon fun(self: dungeons_helper): boolean
+---@field public is_mythic_plus_dungeon fun(self: dungeons_helper): boolean
+---@field public get_mythic_scaling fun(self: dungeons_helper): number
+---@field public get_mythic_key_level fun(self: dungeons_helper): number
+---@field public is_kite_exception fun(self: dungeons_helper): boolean, game_object | nil, game_object | nil
+---@field public is_kikatal_near_cosmic_cast fun(self: dungeons_helper, energy_threshold: number): boolean, game_object | nil
+---@field public is_kikatal_grasping_blood_exception fun(self: dungeons_helper): boolean, game_object | nil, game_object | nil
+---@field public is_fixation_exception fun(self: dungeons_helper): boolean, game_object | nil
+---@field public is_xalataths_bargain_ascendant_exception fun(self: dungeons_helper): boolean, table<game_object>
+
+---@class class_id
+---@field public ANY number
+---@field public WARRIOR number
+---@field public PALADIN number
+---@field public HUNTER number
+---@field public ROGUE number
+---@field public PRIEST number
+---@field public DEATHKNIGHT number
+---@field public SHAMAN number
+---@field public MAGE number
+---@field public WARLOCK number
+---@field public MONK number
+---@field public DRUID number
+---@field public DEMONHUNTER number
+---@field public EVOKER number
+
+---@class class_id_to_name
+---@field public [number] string
+
+---@class power_type
+---@field public HEALTH number
+---@field public NONE number
+---@field public MANA number
+---@field public RAGE number
+---@field public FOCUS number
+---@field public ENERGY number
+---@field public COMBOPOINTS number
+---@field public RUNES number
+---@field public RUNICPOWER number
+---@field public SOULSHARDS number
+---@field public LUNARPOWER number
+---@field public HOLYPOWER number
+---@field public ALTERNATE number
+---@field public MAELSTROM number
+---@field public CHI number
+---@field public INSANITY number
+---@field public OBSOLETE number
+---@field public OBSOLETE2 number
+---@field public ARCANECHARGES number
+---@field public FURY number
+---@field public PAIN number
+---@field public ESSENCE number
+---@field public RUNEFORGEPOWER number
+
+---@class group_role
+---@field public NONE number
+---@field public TANK number
+---@field public HEALER number
+---@field public DAMAGER number
+
+---@class classification
+---@field public UNKNOWN number
+---@field public NORMAL number
+---@field public ELITE number
+---@field public RARE_ELITE number
+---@field public WORLD_BOSS number
+---@field public RARE number
+---@field public TRIVIAL number
+---@field public MINUS number
+
+---@class mark_index
+---@field public NO_MARK number
+---@field public NO_ICON number
+---@field public STAR number
+---@field public CIRCLE number
+---@field public DIAMOND number
+---@field public TRIANGLE number
+---@field public MOON number
+---@field public SQUARE number
+---@field public CROSS number
+---@field public SKULL number
+---@field public NO_MARK_2 number
+
+---@class loss_of_control_type
+---@field public NONE number
+---@field public POSSES number
+---@field public CONFUSE number
+---@field public CHARM number
+---@field public FEAR number
+---@field public STUN number
+---@field public PACIFY number
+---@field public ROOT number
+---@field public SILENCE number
+---@field public PACIFY_SILENCE number
+---@field public DISARM number
+---@field public SCHOOL_INTERRUPT number
+---@field public STUN_MECHANIC number
+---@field public FEAR_MECHANIC number
+---@field public NONE_2 number
+---@field public NONE_3 number
+
+---@class collision_flags
+---@field public None number
+---@field public DoodadCollision number
+---@field public DoodadRender number
+---@field public WmoCollision number
+---@field public WmoRender number
+---@field public WmoNoCamCollision number
+---@field public Terrain number
+---@field public IgnoreWmoDoodad number
+---@field public LiquidWaterWalkable number
+---@field public LiquidAll number
+---@field public Cull number
+---@field public EntityCollision number
+---@field public EntityRender number
+---@field public Collision number
+---@field public LineOfSight number
+---@field public combine fun(...: string): number
+
+---@class schools_flag : integer
+
+---@class spell_schools_flags
+---@field public Physical schools_flag
+---@field public Holy schools_flag
+---@field public Fire schools_flag
+---@field public Nature schools_flag
+---@field public Frost schools_flag
+---@field public Shadow schools_flag
+---@field public Arcane schools_flag
+---@field public Spellstrike schools_flag
+---@field public Flamestrike schools_flag
+---@field public Froststrike schools_flag
+---@field public Holystrike schools_flag
+---@field public Stormstrike schools_flag
+---@field public Shadowstrike schools_flag
+---@field public Spellfire schools_flag
+---@field public Spellfrost schools_flag
+---@field public Spellshadow schools_flag
+---@field public Frostfire schools_flag
+---@field public Radiant schools_flag
+---@field public Holyfrost schools_flag
+---@field public Holystorm schools_flag
+---@field public Twilight schools_flag
+---@field public Froststorm schools_flag
+---@field public Volcanic schools_flag
+---@field public Astral schools_flag
+---@field public Plague schools_flag
+---@field public Shadowflame schools_flag
+---@field public Shadowfrost schools_flag
+---@field public Divine schools_flag
+---@field public combine fun(...: string): schools_flag
+---@field public contains fun(value: schools_flag, flag: schools_flag): boolean
+
+---@class spell_type
+---@field public TARGET number
+---@field public POSITION number
+
+---@class trigger_mode
+---@field public BASIC number
+---@field public PREDICTION number
+
+---@class buff_type
+---@field public EXCEPTION number
+---@field public UNDEFINIED number
+---@field public UNKNOWN number
+---@field public MAGIC number
+---@field public CURSE number
+---@field public DISEASE number
+---@field public POISON number
+---@field public STEALTH number
+---@field public TO_BE_DETERMINED number
+---@field public MAGIC_CURSE_DISEASE_POISON number
+---@field public SPECIAL number
+---@field public ENRAGE number
+
+---@class buff_type_to_string
+---@field public [number] string
+
+---@class menu_element_type
+---@field public BUTTON number
+---@field public CHECKBOX number
+---@field public COLOR_PICKER number
+---@field public COMBOBOX number
+---@field public COMBOBOX_REORDERABLE number
+---@field public KEY_CHECKBOX number
+---@field public KEYBIND number
+---@field public SLIDER_FLOAT number
+---@field public SLIDER_INT number
+---@field public TEXT_INPUT number
+---@field public TREE_NODE number
+---@field public HEADER number
+---@field public WINDOW number
+
+---@class window_enums
+---@field public window_behaviour_flags table<string, number>
+---@field public font_id table<string, number>
+---@field public rect_borders_rounding_flags table<string, number>
+---@field public window_resizing_flags table<string, number>
+---@field public window_cross_visuals table<string, number>
+
+---@class spec_enum
+---@field public ARMS_WARRIOR number
+---@field public FURY_WARRIOR number
+---@field public PROTECTION_WARRIOR number
+---@field public HOLY_PALADIN number
+---@field public PROTECTION_PALADIN number
+---@field public RETRIBUTION_PALADIN number
+---@field public BEAST_MASTERY_HUNTER number
+---@field public MARKSMANSHIP_HUNTER number
+---@field public SURVIVAL_HUNTER number
+---@field public ASSASSINATION_ROGUE number
+---@field public OUTLAW_ROGUE number
+---@field public SUBTLETY_ROGUE number
+---@field public DISCIPLINE_PRIEST number
+---@field public HOLY_PRIEST number
+---@field public SHADOW_PRIEST number
+---@field public BLOOD_DEATHKNIGHT number
+---@field public FROST_DEATHKNIGHT number
+---@field public UNHOLY_DEATHKNIGHT number
+---@field public ELEMENTAL_SHAMAN number
+---@field public ENHANCEMENT_SHAMAN number
+---@field public RESTORATION_SHAMAN number
+---@field public ARCANE_MAGE number
+---@field public FIRE_MAGE number
+---@field public FROST_MAGE number
+---@field public AFFLICTION_WARLOCK number
+---@field public DEMONOLOGY_WARLOCK number
+---@field public DESTRUCTION_WARLOCK number
+---@field public BREWMASTER_MONK number
+---@field public MISTWEAVER_MONK number
+---@field public WINDWALKER_MONK number
+---@field public BALANCE_DRUID number
+---@field public FERAL_DRUID number
+---@field public GUARDIAN_DRUID number
+---@field public RESTORATION_DRUID number
+---@field public HAVOC_DEMON_HUNTER number
+---@field public VENGEANCE_DEMON_HUNTER number
+---@field public EVOKER_DEVASTATION number
+---@field public EVOKER_PRESERVATION number
+---@field public EVOKER_AUGMENTATION number
+
+---@class class_spec_id
+---@field public to_string table<number, table<number, string>>
+---@field public spec_enum spec_enum
+---@field public to_int table<number, table<number, number>>
+---@field public get_specialization_name fun(char_class_id: number, char_spec_id: number): string
+---@field public get_specialization_enum fun(char_class_id: number, char_spec_id: number): number
+---@field public get_spec_id_from_enum fun(spec_enum: number): number
+
+---@class class_spec_to_role
+---@field public class_role table<string, table<number, number>>
+---@field public get_group_role_backup fun(char_class_id: number, char_spec: number): number
+
+---@class enums
+---@field public class_id class_id
+---@field public class_id_to_name class_id_to_name
+---@field public power_type power_type
+---@field public group_role group_role
+---@field public classification classification
+---@field public mark_index mark_index
+---@field public loss_of_control_type loss_of_control_type
+---@field public collision_flags collision_flags
+---@field public spell_schools_flags spell_schools_flags
+---@field public spell_type spell_type
+---@field public trigger_mode trigger_mode
+---@field public buff_db buff_db
+---@field public buff_type buff_type
+---@field public buff_type_to_string buff_type_to_string
+---@field public menu_element_type menu_element_type
+---@field public window_enums window_enums
+---@field public class_spec_id class_spec_id
+---@field public class_spec_to_role class_spec_to_role
+---@class threat_table
+---@field public is_tanking boolean
+---@field public status integer -- 0, 1, 2, 3
+---@field public threat_percent number -- 0 to 100
+
+---@class buff
+---@field public buff_name string
+---@field public buff_id integer
+---@field public count number
+---@field public expire_time number
+---@field public duration number
+---@field public type integer
+---@field public caster game_object
+
+---@class loss_of_control_info
+---@field public valid boolean
+---@field public spell_id integer
+---@field public start_time integer
+---@field public end_time integer
+---@field public duration integer
+---@field public type integer
+---@field public lockout_school schools_flag
+
+---@class item_slot_info
+---@field public object game_object
+---@field public slot_id integer
+
+---@class game_object
+---Returns whether the game_object is valid.
+---@field public is_valid fun(self: game_object): boolean
+---Returns whether the game_object is visible.
+---@field public is_visible fun(self: game_object): boolean
+---Returns the type of the game object.
+---@field public get_type fun(self: game_object): number
+---Returns the class of the game object.
+---@field public get_class fun(self: game_object): number
+---Returns the spec_id of the game object.
+---@field public get_specialization_id fun(self: game_object): number
+---Returns the npc_id of the game object.
+---@field public get_npc_id fun(self: game_object): number
+---Returns the item_id of the game object.
+---@field public get_item_id fun(self: game_object): number
+---Returns the level of the game object.
+---@field public get_level fun(self: game_object): number
+---Returns the faction id of the game object.
+---@field public get_faction_id fun(self: game_object): number
+---Returns the mark id of the game object.  
+--- 0 = No Icon   
+--- 1 = Yellow 4-point Star  
+--- 2 = Orange Circle  
+--- 3 = Purple Diamond  
+--- 4 = Green Triangle  
+--- 5 = White Crescent Moon  
+--- 6 = Blue Square  
+--- 7 = Red "X" Cross  
+--- 8 = White Skull  
+---@field public get_target_marker_index fun(self: game_object): number
+---Returns the creature_type id of the game object.  
+-- 1 -> Beast
+-- 2 -> Dragonkin
+-- 3 -> Demon
+-- 4 -> Elemental
+-- 5 -> Giant
+-- 6 -> Undead
+-- 7 -> Humanoid
+-- 8 -> Critter
+-- 9 -> Mechanical
+-- 10 -> Not specified
+-- 11 -> Totem
+-- 12 -> Non-combat Pet
+-- 13 -> Gas Cloud
+-- 14 -> Wild Pet
+-- 15 -> Aberration
+---@field public get_creature_type fun(self: game_object): number
+---Returns the classification id of the game object.  
+--- -1 = unknown  
+--- 0 = normal  
+--- 1 = elite  
+--- 2 = rareelite  
+--- 3 = worldboss  
+--- 4 = rare  
+--- 5 = trivial  
+--- 6 = minus  
+---@field public get_classification fun(self: game_object): number
+---Returns the group role of the game object.  
+--- "NONE" / unknown = -1  
+--- "TANK" = 0  
+--- "HEALER" = 1  
+--- "DAMAGER" = 2  
+---@field public get_group_role fun(self: game_object): number
+---Returns the bounding radius of the game object.
+---@field public get_bounding_radius fun(self: game_object): number
+---Returns the height of the game object.
+---@field public get_height fun(self: game_object): number
+---Returns the scale of the game object.
+---@field public get_scale fun(self: game_object): number
+---Returns the cooldown of the specified item.
+---@field public get_item_cooldown fun(self: game_object, item_id: integer): number
+---Returns whether the game object is a party member.
+---@field public is_party_member fun(self: game_object): boolean
+---Returns whether the game object has the specified item.
+---@field public has_item fun(self: game_object, item_id: integer): boolean
+---Returns whether the game object is dead.
+---@field public is_dead fun(self: game_object): boolean
+---Returns whether the game object is ghost.
+---@field public is_ghost fun(self: game_object): boolean
+---Returns whether the game object is feigning death.
+---@field public is_feign_death fun(self: game_object): boolean
+---Returns whether the game object is a basic object.
+---@field public is_basic_object fun(self: game_object): boolean
+---Returns whether the game object is a player.
+---@field public is_player fun(self: game_object): boolean
+---Returns whether the game object is a unit.
+---@field public is_unit fun(self: game_object): boolean
+---Returns whether the game object is a boss.
+---@field public is_boss fun(self: game_object): boolean
+---Returns whether the game object is an item.
+---@field public is_item fun(self: game_object): boolean
+---Returns whether the game object is mounted.
+---@field public is_mounted fun(self: game_object): boolean
+---Returns whether the game object is outdoors.
+---@field public is_outdoors fun(self: game_object): boolean
+---Returns whether the game object is indoors.
+---@field public is_indoors fun(self: game_object): boolean
+---Returns whether the game object is glowing.
+---@field public is_glow fun(self: game_object): boolean
+---Sets the glowing state of the game object.
+---@field public set_glow fun(self: game_object, state: boolean): nil
+---Returns whether the game object is in combat.
+---@field public is_in_combat fun(self: game_object): boolean
+---Returns the position of the game object.
+---@field public get_position fun(self: game_object): vec3
+---Returns the name of the game object.
+---@field public get_name fun(self: game_object): string
+---Returns the current health of the game object.
+---@field public get_health fun(self: game_object): number
+---Returns the maximum health of the game object.
+---@field public get_max_health fun(self: game_object): number
+---Returns the max health modifier of the game object.
+---@field public get_max_health_modifier fun(self: game_object): number
+---Returns the current power of the game object for the specified power type.  
+--- Note: https://wowpedia.fandom.com/wiki/Enum.PowerType
+---@field public get_power fun(self: game_object, power_type: number): number
+---Returns the maximum power of the game object for the specified power type.  
+--- Note: https://wowpedia.fandom.com/wiki/Enum.PowerType
+---@field public get_max_power fun(self: game_object, power_type: number): number
+---Returns the experience points (XP) of the game object.
+---@field public get_xp fun(self: game_object): number
+---Returns the maximum experience points (XP) of the game object.
+---@field public get_max_xp fun(self: game_object): number
+---Returns the total absorb shield of the game object.
+---@field public get_total_shield fun(self: game_object): number
+---Returns the total incoming heals of the game object.
+---@field public get_incoming_heals fun(self: game_object): number
+---Returns the incoming heals of the game object from an specific game_object.
+---@field public get_incoming_heals_from fun(self: game_object): number
+---Returns whether the game object can attack the specified game object.
+---@field public can_attack fun(self: game_object, other_game_object: game_object): boolean
+---Returns whether the game object is an enemy with the specified game object.
+---@field public is_enemy_with fun(self: game_object, other_game_object: game_object): boolean
+---Returns whether the game object is a friend with the specified game object.
+---@field public is_friend_with fun(self: game_object, other_game_object: game_object): boolean
+---Returns whether the game object is moving.
+---@field public is_moving fun(self: game_object): boolean
+---Returns whether the game object is dashing.
+---@field public is_dashing fun(self: game_object): boolean
+---Returns whether the game object is flying.
+---@field public is_flying fun(self: game_object): boolean
+---Returns the current movement speed of the game object.
+---@field public get_movement_speed fun(self: game_object): number
+---Returns the maximum movement speed of the game object.
+---@field public get_movement_speed_max fun(self: game_object): number
+---Returns the maximum swim speed of the game object.
+---@field public get_swim_speed_max fun(self: game_object): number
+---Returns the maximum flight speed of the game object.
+---@field public get_flight_speed_max fun(self: game_object): number
+---Returns the auto attack swing speed of the game object.
+---@field public get_attack_speed fun(self: game_object): number
+---Returns the rotation of the game object.
+---@field public get_rotation fun(self: game_object): number
+---Returns the direction of the game object.
+---@field public get_direction fun(self: game_object): vec3
+---Returns the direction of the game object movement manager.
+---@field public get_movement_direction fun(self: game_object): vec3
+---Returns whether the game object is a pet.
+---@field public is_pet fun(self: game_object): boolean
+---Returns whether the game object is a minion (alt pets).
+---@field public is_minion fun(self: game_object): boolean
+---Returns whether the game object is a bag type item.
+---@field public is_item_bag fun(self: game_object): boolean
+---Returns the stack count of the item in our bag.
+---@field public get_item_stack_count fun(self: game_object): number
+---Returns the owner of the game object.
+---@field public get_owner fun(self: game_object): game_object
+---Returns the pet of the game object.
+---@field public get_pet fun(self: game_object): game_object
+---Returns the target of the game object.
+---@field public get_target fun(self: game_object): game_object
+---Returns the target of the active spell being cast by the game object.
+---@field public get_active_spell_target fun(self: game_object): game_object
+---Returns whether the game object is casting a spell.
+---@field public is_casting_spell fun(self: game_object): boolean
+---Returns the ID of the active spell being cast by the game object.
+---@field public get_active_spell_id fun(self: game_object): number
+---Returns the start time of the active spell being cast by the game object.
+---@field public get_active_spell_cast_start_time fun(self: game_object): number
+---Returns the end time of the active spell being cast by the game object.
+---@field public get_active_spell_cast_end_time fun(self: game_object): number
+---Returns whether the active spell being cast by the game object can be interrupted.
+---@field public is_active_spell_interruptable fun(self: game_object): boolean
+---Returns whether the game object is currently channeling a spell.
+---@field public is_channelling_spell fun(self: game_object): boolean
+---Returns the ID of the active channel spell being cast by the game object.
+---@field public get_active_channel_spell_id fun(self: game_object): number
+---Returns the start time of the active channel spell being cast by the game object.
+---@field public get_active_channel_cast_start_time fun(self: game_object): number
+---Returns the end time of the active channel spell being cast by the game object.
+---@field public get_active_channel_cast_end_time fun(self: game_object): number
+---Returns the threat situation from the game_object to another game_object.
+---@field public get_threat_situation fun(self: game_object, obj: game_object): threat_table
+---Returns a table containing the auras applied to the game object.
+---@field public get_auras fun(self: game_object): table<buff>
+---Returns a table containing the buffs applied to the game object.
+---@field public get_buffs fun(self: game_object): table<buff>
+---Returns a table containing the debuffs applied to the game object.
+---@field public get_debuffs fun(self: game_object): table<buff>
+---Returns a list of equipped items (item_slot_info) of the game object, the format comes in we call item_slot_info, a table that contains game_object ptr of the item and item_slot.
+---@field public get_equipped_items fun(self: game_object): table<item_slot_info>
+---Returns a table with the item game_object ptr and the slot_id where the item is on the game object equipped items.
+---@field public get_item_at_inventory_slot fun(self: game_object, slot:number): item_slot_info
+--- Returns whether the game object can be looted.
+---@field public can_be_looted fun(self: game_object): boolean
+--- Returns whether the game object can be used.
+---@field public can_be_used fun(self: game_object): boolean
+--- Returns whether the game object can be skinned.
+---@field public can_be_skinned fun(self: game_object): boolean
+--- Returns the game object creator.
+---@field public get_creator_object fun(self: game_object): game_object
+---Returns a table containing the loss of control info for the game object.
+---@field public get_loss_of_control_info fun(self: game_object): loss_of_control_info
+---Returns a table phase id
+---@field public get_unit_phase fun(): number
+
+---@class circle_data
+---@field public units_hit number
+---@field public best_unit game_object
+---@field public best_position vec3
+---@field public best_units table<game_object>
+
+---@class circle
+---@field public center vec3
+---@field public radius number
+---@field public create fun(self: circle, center: vec3, radius: number): circle
+---@field public is_inside fun(self: circle, point: vec3, hitbox: number): boolean
+---@field public get_units_inside fun(self: circle, units_list: table<game_object>): table<game_object>
+---@field public get_allies_inside fun(self: circle, units_list_override: table<game_object>?): table<game_object>
+---@field public get_enemies_inside fun(self: circle, units_list_override: table<game_object>?): table<game_object>
+---@field public draw fun(self: circle): nil
+---@field public draw_with_counter fun(self: circle, units_hit_count: number?): nil
+---@field public get_optimal_hit_position fun(self: circle, search_center: vec3, search_radius: number, max_range: number, include_enemies: boolean, include_allies: boolean): circle_data
+
+---@class rectangle
+---@field public corner1 vec3
+---@field public corner2 vec3
+---@field public corner3 vec3
+---@field public corner4 vec3
+---@field public width number
+---@field public length number
+---@field public origin vec3
+---@field public destination vec3
+---@field public create fun(self: rectangle, origin: vec3, destination: vec3, width: number, length: number?): rectangle
+---@field public create_direction fun(self: rectangle, position: vec3, direction: vec3, width: number, length: number): rectangle
+---@field public is_inside fun(self: rectangle, point: vec3, hitbox: number): boolean
+---@field public get_units_inside fun(self: rectangle, units_list: table<game_object>): table<game_object>
+---@field public get_allies_inside fun(self: rectangle, units_list_override: table<game_object>?): table<game_object>
+---@field public get_enemies_inside fun(self: rectangle, units_list_override: table<game_object>?): table<game_object>
+---@field public draw fun(self: rectangle): nil
+---@field public draw_with_counter fun(self: rectangle, count: number?): nil
+
+---@class cone
+---@field public center vec3
+---@field public radius number
+---@field public angle_raw number
+---@field public angle number
+---@field public direction vec3
+---@field public path_around_cone table<vec3>
+---@field public right_side_circ_points table<vec3>
+---@field public left_side_circ_points table<vec3>
+---@field public left_line_points table<vec3>
+---@field public right_line_points table<vec3>
+---@field public extra_left_point table<vec3>
+---@field public extra_right_point table<vec3>
+---@field public create fun(self: cone, center: vec3, destination: vec3, radius: number, angle: number): cone
+---Function to create a cone given a position, radius, angle, and direction
+---Note: Direction is obj:direction()
+---@field public create_direction fun(self: cone, center: vec3, direction: vec3, radius: number, angle: number): cone
+---@field public create_unit_frontal fun(self: cone, unit: game_object, radius: number, angle: number): cone
+---@field public get_path fun(self: cone, cone_info: table): nil
+---@field public is_inside fun(self: cone, point_position: vec3, hitbox: number): boolean
+---@field public get_units_inside fun(self: cone, units_list: table<game_object>): table<game_object>
+---@field public get_allies_inside fun(self: cone, units_list_override: table<game_object>?): table<game_object>
+---@field public get_enemies_inside fun(self: cone, units_list_override: table<game_object>?): table<game_object>
+---@field public draw fun(self: cone, color?:color, thickness?:number): nil
+---@field public draw_with_counter fun(self: cone, count: number?): nil
+
+--[[
+Example usage:
+---@type graphics_helper
+local gfx = require("common/utility/graphics_helper")
+gfx: -> IntelliSense available
+-- Warning: Access with ":", not "."
+]]
+
+--- @class graphics_helper
+--- A helper library for drawing text with effects (e.g. outlined, shadowed) in 2D and 3D.
+--- Provides default settings and style enums for efficient text drawing.
+--- 
+--- Default configuration:
+---  * text_size (number): Default font size (30).
+---  * style (number): Default text style. Use graphics_helper.styles.OUTLINED or graphics_helper.styles.SHADOWED (default is OUTLINED).
+---  * text_color (color): Default main text color (color.white(255)).
+---  * outline_color (color): Default outline/shadow color (color.black(255)).
+---  * outline_thickness (number): Thickness of the outline (3).
+---  * outline_steps (number): Number of steps for the outline (16).
+---
+--- @field defaults table
+--- @field styles table
+--- @field draw_text_outlined_2d fun(self: graphics_helper, text: string, position: vec2, options: table|nil): nil
+--- @field draw_text_outlined_3d fun(self: graphics_helper, text: string, position: vec3, options: table|nil): nil
+
+
+-- Example:
+-- ---@type health_prediction
+-- local x = require("common/modules/health_prediction")
+-- x: -> IntelliSense
+-- Warning: Access with ":", not "."
+
+---@class damage_type_enum
+---@field public PHYSICAL_DAMAGE number[]
+---@field public MAGICAL_DAMAGE number[]
+
+---@class damage_types_table
+---@field public physical_damage number[]
+---@field public magical_damage number[]
+
+---@class health_prediction
+--- Get incoming damage on a target within a deadline.
+---@field public get_incoming_damage fun(self: nil, target: game_object, deadline_time_in_seconds?: number, is_exception?: boolean): number
+--- Check if the current situation is a PvP situation.
+---@field public is_pvp_situation fun(self: nil, target: game_object): boolean
+--- Speculate the auto attack damage.
+---@field public speculate_auto_attack_damage fun(self: nil, caster: game_object, target: game_object, damage: number, spell_id: number): number
+--- Speculate the spell damage.
+---@field public speculate_spell_damage fun(self: nil, caster: game_object, target: game_object, damage: number, spell_id: number): number
+--- Get the role ID of the target.
+---@field public get_role_id fun(self: nil, target: game_object): number
+--- Check if the unit is a tank.
+---@field public is_tank fun(self: nil, unit: game_object): boolean
+--- Speculate the damage of a spell considering various factors.
+---@field public speculate_damage fun(self: nil, caster: game_object, target: game_object, damage: number, spell_id: number): number
+--- Get incoming damage on a target within a deadline.
+---@field public get_damage_types fun(self: nil, target: game_object, deadline_time_in_seconds?: number, is_exception?: boolean): damage_types_table
+
+--[[
+Example:
+---@type inventory_helper
+local inventory = require("common/utility/inventory_helper")
+inventory: -> IntelliSense
+Warning: Access with ":", not "."
+]]
+
+-- This library centralizes inventory management.
+-- Simplifying access to items in all bags, bank slots, and tracking specific consumables like potions and elixirs.
+
+---@class slot_data
+---@field public item game_object          -- The item object in this slot
+---@field public global_slot number        -- Global slot identifier
+---@field public bag_id integer            -- ID of the bag containing the item
+---@field public bag_slot integer          -- Slot number within the bag
+---@field public stack_count integer       -- Stack count of the item in this slot
+
+---@class consumable_data
+---@field public is_mana_potion boolean    -- Whether the item is a mana potion
+---@field public is_health_potion boolean  -- Whether the item is a health potion
+---@field public is_damage_bonus_potion boolean -- Whether the item is a damage bonus potion
+---@field public item game_object          -- The item object for the consumable
+---@field public bag_id integer            -- ID of the bag containing the item
+---@field public bag_slot integer          -- Slot number within the bag
+---@field public stack_count integer       -- Stack count of the item in this slot
+
+---@class inventory_helper
+---@field public get_all_slots fun(self: inventory_helper): table<slot_data> 
+---@field public get_character_bag_slots fun(self: inventory_helper): table<slot_data> 
+---@field public get_bank_slots fun(self: inventory_helper): table<slot_data> 
+---@field public get_current_consumables_list fun(self: inventory_helper): table<consumable_data> 
+---@field public update_consumables_list fun(self: inventory_helper)
+---@field public debug_print_consumables fun(self: inventory_helper)
+
+-- Example:
+-- ---@type key_helper
+-- local x = require("common/utility/key_helper")
+-- x: -> IntelliSense
+-- Warning: Access with ":", not "."
+
+---@class key_helper
+--- Function to get the name of a key based on its key code.
+---@field public get_key_name fun(self: key_helper, key_code: number): string
+
+---@class tree_node
+---@field public is_open fun():boolean
+---@field public render fun(self:tree_node, header:string, callback:function):nil
+---@field public get_widget_bounds fun(self:tree_node):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public set_open_state fun(self:tree_node, state:boolean):nil
+---@field public set fun(self:checkbox, nil):nil -- Dummy function. Do not use. This is for you to be able to loop menu elements and set them all to default without any LUA errors.
+---@field public get fun(self:checkbox):nil
+
+---@class checkbox
+---@field public get_state fun():boolean
+---@field public get_type fun(self:checkbox)
+---@field public set fun(self: checkbox, new_state:boolean):nil
+---@field public render fun(self:checkbox, label:string, tooltip:string|nil):nil
+---@field public get_widget_bounds fun(self:checkbox):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public set fun(self:checkbox, val:boolean):nil
+---@field public get fun(self:checkbox):boolean
+
+---@class key_checkbox
+---@field public get_main_checkbox_state fun(self:key_checkbox):boolean
+---@field public get_key_code fun(self:key_checkbox):integer
+---@field public get_keybind_state fun(self:key_checkbox):boolean
+---@field public set_toggle_state fun(self:key_checkbox, state:boolean):nil
+---@field public set_key fun(self:key_checkbox, key:integer):nil
+---@field public set_mode fun(self:key_checkbox, mode:integer):nil
+---@field public should_show_on_control_panel fun(self:key_checkbox):boolean
+---@field public get_mode fun(self:key_checkbox):integer -- 0 is hold, 1 is toggle, 2 is always
+---@field public get_type fun(self:key_checkbox)
+---@field public render fun(self:key_checkbox, label:string, tooltip:string|nil):nil
+
+---@class slider_int
+---@field public get fun():number
+---@field public get_type fun(self:slider_int)
+---@field public set fun(self:slider_int, new_value:integer):nil
+---@field public render fun(self:slider_int, label:string, tooltip:string|nil):nil
+---@field public get_widget_bounds fun(self:slider_int):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public set fun(self:slider_int, val:integer):nil
+---@field public get fun(self:slider_int):integer
+
+---@class slider_float
+---@field public get fun():number
+---@field public get_type fun(self:slider_float)
+---@field public set fun(self:slider_float, new_value:number):nil
+---@field public render fun(self:slider_float, label:string, tooltip:string|nil):nil
+---@field public get_widget_bounds fun(self:slider_float):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public set fun(self:slider_float, val:number):nil
+---@field public get fun(self:slider_float):number
+
+---@class combobox
+---@field public get fun():number
+---@field public get_type fun(self:combobox)
+---@field public get_label fun(self:keybind):string -- The menu element needs to be rendered for this to return a string different than ""
+---@field public get_widget_bounds fun(self:combobox):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public set fun(self:combobox, new_value:number):nil
+---@field public is_showing_on_control_panel fun(self:combobox):boolean
+---@field public set_is_showing_on_control_panel fun(self:combobox):nil
+---@field public render fun(self:combobox, label:string, options:table, tooltip:string|nil):nil
+---@field public set fun(self:combobox, val:integer):nil
+---@field public get fun(self:combobox):integer
+
+---@class combobox_reorderable
+---@field public get fun():number
+---@field public get_type fun(self:combobox_reorderable)
+---@field public render fun(self:combobox_reorderable, label:string, options:table, tooltip:string|nil):nil
+---@field public set fun(self:combobox_reorderable, val:integer):nil
+---@field public get fun(self:combobox_reorderable):integer
+
+---@class keybind
+---@field public get_type fun(self:keybind)
+---@field public get_label fun(self:keybind):string -- The menu element needs to be rendered for this to return a string different than ""
+---@field public get_state fun(self:keybind):boolean
+---@field public get_key_code fun(self:keybind):integer
+---@field public get_widget_bounds fun(self:keybind):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public get_toggle_state fun(self:keybind):boolean
+---@field public set_key fun(self:keybind, new_key:number):nil
+---@field public set_is_showing_on_control_panel fun(self:keybind):nil
+---@field public is_showing_on_control_panel fun(self:keybind):boolean
+---@field public set_toggle_state fun(self:keybind, new_state:boolean):nil
+---@field public render fun(self:keybind, label:string, tooltip:string|nil, add_separator:boolean|nil):nil
+---@field public set fun(self:keybind, val:integer):nil
+---@field public get fun(self:keybind):integer
+
+---@class button
+---@field public get_type fun(self:button)
+---@field public is_clicked fun(self:button):boolean
+---@field public get_widget_bounds fun(self:button):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public render fun(self:button, label:string, tooltip:string|nil):nil
+---@field public set fun(self:checkbox, nil):nil -- Dummy function. Do not use. This is for you to be able to loop menu elements and set them all to default without any LUA errors.
+---@field public get fun(self:checkbox):nil
+
+---@class text_input
+---@field public get_type fun(self:text_input)
+---@field public get_text fun(self:text_input):string
+---@field public get_widget_bounds fun(self:text_input):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public get_text_as_number fun(self:text_input):number
+---@field public render fun(self:text_input, label:string, tooltip:string|nil):nil
+---@field public render_custom fun(self:text_input, label:string, tooltip:string, frame_bg:color, border_color:color, text_selected_bg_col:color, text_color:color, width_offset:number):nil
+---@field public set fun(self:text_input, val:string):nil
+---@field public get fun(self:text_input):integer
+
+---@class color_picker
+---@field public get fun():color
+---@field public get_type fun(self:color_picker)
+---@field public get_widget_bounds fun(self:color_picker):table -- Returns a table with 2 elements, min and max. get_widget_bounds().min is the left border of the widget, and .max is the right border.
+---@field public render fun(self:color_picker, label:string, tooltip:string|nil):nil
+---@field public set fun(self:color_picker, val:integer):nil
+---@field public get fun(self:color_picker):color
